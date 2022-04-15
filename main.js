@@ -4,8 +4,8 @@ const { app, BrowserWindow } = require('electron')
 
 async function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 500,
+    height: 300,
     show: false,  // Hiding the window as long as the content is loading.
     autoHideMenuBar: true,
     webPreferences: {
