@@ -6,7 +6,7 @@ async function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    show: false,
+    show: false,  // Hiding the window as long as the content is loading.
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: false,
@@ -17,7 +17,7 @@ async function createWindow() {
   })
 
   await win.loadFile('index.html')
-  win.show()
+  win.show()  // At this point our app is fully available. Let's show it to the user. 
 }
 
 
