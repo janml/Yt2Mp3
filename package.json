@@ -26,11 +26,11 @@
       "target": [
         "nsis"
       ],
-      "icon": "src/assets/icon.ico"
+      "icon": "src/resources/icon.ico"
     },
     "nsis": {
-        "installerIcon": "src/assets/icon.ico",
-        "uninstallerIcon": "src/assets/icon.ico",
+        "installerIcon": "src/resources/icon.ico",
+        "uninstallerIcon": "src/resources/icon.ico",
         "uninstallDisplayName": "Yt2Mp3",
         "license": "LICENCE",
         "oneClick": false,

@@ -17,7 +17,7 @@ async function createWindow() {
     },
   })
 
-  await win.loadFile('index.html')
+  await win.loadFile(path.join(__dirname, "src", "browser", "index.html"))
   win.show()  // At this point our app is fully available. Let's show it to the user. 
 }
 

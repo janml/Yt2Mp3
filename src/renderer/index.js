@@ -5,10 +5,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const searchButton = document.getElementById("search-button")
   const videoSearchResultCard = document.getElementById("video-search-result-card")
 
-  searchButton.addEventListener("click", () => {
+  searchButton.addEventListener("click", async () => {
     const videoUrl = videoUrlField.value
     console.log(`Requested to search for video with url: ${videoUrl}`)
 
-    videoSearchResultCard.classList.remove("is-invisible")
+    let videoMeta = await window.youtube.getVideoMeta(videoUrl)
+    console.log(videoMeta)
+
+    //videoSearchResultCard.classList.remove("is-invisible")
+
   })
 })
