@@ -9,7 +9,9 @@ async function createWindow() {
     show: false,
     autoHideMenuBar: true,
     webPreferences: {
-      nodeIntegration: true,
+      nodeIntegration: false,
+      contextIsolation: true,
+      sandbox: true,
       preload: path.join(__dirname, "src", "renderer", "preload.js")
     },
   })
