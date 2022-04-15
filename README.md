@@ -1,5 +1,7 @@
 # Yt2Mp3 (Under development):
-Downloads YouTube videos as Mp3.
+[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
+
+![](https://raw.githubusercontent.com/janml/Yt2Mp3/main/showcase.PNG)
 
 ## Setup:
 Install JavaScript dependencies with npm:
