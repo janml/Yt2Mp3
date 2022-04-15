@@ -6,6 +6,7 @@ async function createWindow() {
   const win = new BrowserWindow({
     width: 500,
     height: 300,
+    resizable: false,
     show: false,  // Hiding the window as long as the content is loading.
     autoHideMenuBar: true,
     webPreferences: {
