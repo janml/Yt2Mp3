@@ -1,0 +1,19 @@
+{
+  "name": "yt2mp3",
+  "version": "1.0.0",
+  "description": "Downloads YouTube videos as Mp3",
+  "author": "Jan-Michael Löhlein",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^18.0.4",
+    "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "ytdl-core": "^4.11.0"
+  }
+}
