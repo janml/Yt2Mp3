@@ -18,8 +18,23 @@
     "bulma": "^0.9.3",
     "ytdl-core": "^4.11.0"
   },
+
   "build": {
     "appId": "com.yt2mp3",
-    "productName": "Yt2Mp3" 
+    "productName": "Yt2Mp3",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/assets/icon.ico"
+    },
+    "nsis": {
+        "installerIcon": "src/assets/icon.ico",
+        "uninstallerIcon": "src/assets/icon.ico",
+        "uninstallDisplayName": "Yt2Mp3",
+        "license": "LICENCE",
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true
+    }
   }
 }
