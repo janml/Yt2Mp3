@@ -21,6 +21,10 @@ app.on("ready", async () => {
   await createWindow()
 })
 
+app.on('window-all-closed', () => {
+  app.quit()
+})
+
 
 // Hot-reloading in development
 try {
