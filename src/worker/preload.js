@@ -1,8 +1,16 @@
 const { contextBridge, ipcRenderer } = require('electron')
 
 
-contextBridge.exposeInMainWorld("youtube", {
-  "getVideoMeta": () => {
-    console.log("Would get video meta")
+contextBridge.exposeInMainWorld(
+  "youtube", {
+
+    getVideoMeta: async (videoUrl) => {
+      ipcRenderer.send("get-video-meta", videoUrl)
+      return await new Promise((resolve, reject) => {
+        ipcRenderer.on("video-meta-resolved", (event, videoMeta) => {
+          resolve(videoMeta)
+        })
+      })
+    }
   }
-})
+)

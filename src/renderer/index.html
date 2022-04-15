@@ -17,29 +17,32 @@
     <div class="container px-4 py-4">
       
       <!-- Video search form -->
-      <div class="field has-addons">
-        <div class="control is-expanded">
-          <input id="video-url-field" class="input" type="text" placeholder="YouTube video url">
+      <fieldset class="mb-4">
+        <div class="field has-addons">
+          <div class="control is-expanded">
+            <input id="video-url-field" class="input" type="text" placeholder="YouTube video url">
+          </div>
+          <div class="control">
+            <a id="search-button" class="button is-info">Search</a>
+          </div>
         </div>
-        <div class="control">
-          <a id="search-button" class="button is-info">Search</a>
-        </div>
-      </div>
-      
+      </fieldset>
+
       <!-- Video search result card (Visiblity will be toggled, during download) -->
       <div id="video-search-result-card" class="card is-invisible">
         <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">Lindemann - Yukon</p>
-              <p class="subtitle is-6">Channel name</p>
+          <div class="columns is-mobile">
+            <div class="column is-two-thirds">
+              <p id="video-title" class="title is-4">Lindemann - Yukon</p>
+              <p id="youtube-channel-name" class="subtitle is-6">Channel name</p>
             </div>
-            <div class="media-right">
-              <figure class="image is-128x128">
-                <img src="https://i.ytimg.com/vi/5yJfNY_p9Xk/hqdefault.jpg">
+            <div class="column">
+              <figure class="image">
+                <img id="video-thumbnail" class="is-4by3">
               </figure>
             </div>
           </div>
+          <a id="download-start-button" class="button is-info is-fullwidth">Download as Mp3</a>
         </div>
       </div>
 

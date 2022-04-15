@@ -1,5 +1,6 @@
 const path = require("path")
 const { app, BrowserWindow } = require('electron')
+const { initIPC } = require("./src/worker/ipc")
 
 
 async function createWindow() {
@@ -13,11 +14,12 @@ async function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
       sandbox: true,
-      preload: path.join(__dirname, "src", "renderer", "preload.js")
+      preload: path.join(__dirname, "src", "worker", "preload.js")
     },
   })
 
-  await win.loadFile(path.join(__dirname, "src", "browser", "index.html"))
+  await win.loadFile(path.join(__dirname, "src", "renderer", "index.html"))
+  initIPC()
   win.show()  // At this point our app is fully available. Let's show it to the user. 
 }
 
