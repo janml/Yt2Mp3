@@ -15,6 +15,8 @@
   </head>
   <body>
     <div class="container px-4 py-4">
+      
+      <!-- Video search form -->
       <div class="field has-addons">
         <div class="control is-expanded">
           <input id="video-url-field" class="input" type="text" placeholder="YouTube video url">
@@ -23,8 +25,9 @@
           <a id="search-button" class="button is-info">Search</a>
         </div>
       </div>
-
-      <div class="card">
+      
+      <!-- Video search result card (Visiblity will be toggled, during download) -->
+      <div id="video-search-result-card" class="card is-invisible">
         <div class="card-content">
           <div class="media">
             <div class="media-content">
@@ -39,6 +42,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </body>
 </html>
