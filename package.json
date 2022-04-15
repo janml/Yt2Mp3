@@ -6,14 +6,20 @@
   "license": "MIT",
   "main": "main.js",
   "scripts": {
-    "dev": "electron ."
+    "dev": "electron .",
+    "build": "electron-builder"
   },
   "devDependencies": {
     "electron": "^18.0.4",
+    "electron-builder": "^23.0.3",
     "electron-reloader": "^1.2.3"
   },
   "dependencies": {
     "bulma": "^0.9.3",
     "ytdl-core": "^4.11.0"
+  },
+  "build": {
+    "appId": "com.yt2mp3",
+    "productName": "Yt2Mp3" 
   }
 }
