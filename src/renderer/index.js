@@ -1,6 +1,5 @@
 
 
-
 window.addEventListener("DOMContentLoaded", () => {
   const videoUrlField = document.getElementById("video-url-field")
   const searchButton = document.getElementById("search-button")

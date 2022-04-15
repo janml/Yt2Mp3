@@ -34,6 +34,7 @@ app.on('window-all-closed', () => {
 try {
   require('electron-reloader')(module, {
     watchRenderer: true,
-    debug: true
+    debug: true,
+    ignore: ["dist"]
   })
 } catch (_) {}
