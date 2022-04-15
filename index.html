@@ -9,8 +9,19 @@
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Yt2Mp3</title>
     <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="./src/renderer/css/index.css">
+    <script src="./src/renderer/index.js"></script>
   </head>
   <body>
-    <h1>Foobar</h1>
+    <div class="container px-4 py-4">
+      <div class="field has-addons">
+        <div class="control is-expanded">
+          <input class="input" type="text" placeholder="YouTube video url">
+        </div>
+        <div class="control">
+          <a class="button is-info">Search</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
