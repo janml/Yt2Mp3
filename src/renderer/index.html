@@ -27,14 +27,14 @@
           </div>
         </div>
       </fieldset>
-
-      <!-- Video search result card (Only visible after searching a video) -->
-      <div id="video-search-result-card" class="card is-invisible">
+      
+      <!-- Video card -->
+      <div id="video-card" class="card">
         <div class="card-content">
           <div class="columns is-mobile">
             <div class="column is-two-thirds">
-              <p id="video-title" class="title is-4"><!-- Dynamic value --></p>
-              <p id="youtube-channel-name" class="subtitle is-6"><!-- Dynamic value --></p>
+              <p id="video-title" class="title is-4"></p>
+              <p id="download-progress-describtion" class="subtitle is-6"></p>
             </div>
             <div class="column">
               <figure class="image">
@@ -42,36 +42,10 @@
               </figure>
             </div>
           </div>
-          <a id="download-start-button" class="button is-info is-fullwidth">Download as Mp3</a>
+          <a id="download-start-button" class="button is-info is-fullwidth is-invisible">Download as Mp3</a>
+          <progress id="download-progressbar" class="progress is-info is-invisible" value="0" max="100"></progress>
         </div>
       </div>
-
-      <!-- Video download progress card (Only visible during downloads) -->
-      <div id="download-progress-card" class="card is-invisible">
-        <div class="card-content">
-          <div class="columns is-mobile">
-            <div class="column is-two-thirds">
-              <p id="download-video-title" class="title is-4"><!-- Dynamic value --></p>
-              <p id="download-progress-details" class="subtitle is-6">
-                <!--
-                Progress: 20%
-                <br>
-                Speed: 20 Mb/s
-                <br>
-                Total size: 100 Mb
-                -->
-              </p>
-            </div>
-            <div class="column">
-              <figure class="image">
-                <img id="video-download-thumbnail" class="is-4by3">
-              </figure>
-            </div>
-          </div>
-          <progress id="download-progressbar" class="progress is-info" value="0" max="100"></progress>
-        </div>
-      </div>
-
     </div>
   </body>
 </html>
