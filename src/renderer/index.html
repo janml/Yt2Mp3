@@ -17,7 +17,7 @@
     <div class="container px-4 py-4">
       
       <!-- Video search form -->
-      <fieldset class="mb-4" disabled>
+      <fieldset class="mb-4">
         <div class="field has-addons">
           <div class="control is-expanded">
             <input id="video-url-field" class="input" type="text" placeholder="YouTube video url">
@@ -29,7 +29,7 @@
       </fieldset>
       
       <!-- Video card -->
-      <div id="video-card" class="card">
+      <div id="video-meta-card" class="card is-invisible">
         <div class="card-content">
           <div class="columns is-mobile">
             <div class="column is-two-thirds">
@@ -42,7 +42,7 @@
               </figure>
             </div>
           </div>
-          <a id="download-start-button" class="button is-info is-fullwidth is-invisible">Download as Mp3</a>
+          <a id="download-start-button" class="button is-info is-fullwidth">Download as Mp3</a>
           <progress id="download-progressbar" class="progress is-info is-invisible" value="0" max="100"></progress>
         </div>
       </div>

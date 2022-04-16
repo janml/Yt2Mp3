@@ -11,6 +11,11 @@ contextBridge.exposeInMainWorld(
           resolve(videoMeta)
         })
       })
+    },
+    
+    downloadVideoAsMp3: (videoUrl, onProgress) => {
+      ipcRenderer.send("download-video-as-mp3", videoUrl)
+      ipcRenderer.on("download-progress", (event, progress) => {onProgress(progress)})
     }
   }
 )
