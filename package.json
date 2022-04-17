@@ -17,6 +17,7 @@
   "dependencies": {
     "bulma": "^0.9.3",
     "ffmpeg-static": "^5.0.0",
+    "moment": "^2.29.2",
     "ytdl-core": "^4.11.0"
   },
   "build": {

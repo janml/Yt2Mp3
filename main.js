@@ -32,14 +32,3 @@ app.on("ready", async () => {
 app.on('window-all-closed', () => {
   app.quit()
 })
-
-
-if (!app.isPackaged) {
-  try {
-    require('electron-reloader')(module, {
-      watchRenderer: true,
-      debug: true,
-      ignore: ["dist"]
-    })
-  } catch (_) {}  
-}

@@ -3,6 +3,7 @@ const ffmpeg  = require("ffmpeg-static")
 const {spawn} = require('child_process');
 const path = require("path");
 const {app} = require('electron')
+const moment = require("moment")
 
 
 function getFFmpegBinaryPath() {
@@ -13,7 +14,10 @@ function getFFmpegBinaryPath() {
 }
 
 
-function getFFmpegConvertingConsumer(outputFile, outputFormat) {
+const userDownloadDirectory = app.getPath("downloads")
+
+
+function getFFmpegConvertingConsumer(file) {
   return spawn(
     getFFmpegBinaryPath(), 
       [
@@ -26,7 +30,7 @@ function getFFmpegConvertingConsumer(outputFile, outputFormat) {
           // Map audio & video from streams
           '-map', '0:a',
           // Define output file
-          `${outputFile}.${outputFormat}`,
+          file,
       ], 
       {
           windowsHide: true,
@@ -52,7 +56,8 @@ async function downloadYoutubeVideoAsMp3(videoUrl, onProgress) {
 
   return await new Promise((resolve, reject) => {
     const download = ytdl(videoUrl, {quality: 'highestaudio'})
-    const ffmpegConvertingConsumer = getFFmpegConvertingConsumer(`test`, "mp3")  // TODO: Do not hardcode the filename
+    const file = path.join(userDownloadDirectory, `Yt2Mp3_Download-${moment().format('YYYY-MM-DD-HH-m-s')}.mp3`).toString()
+    const ffmpegConvertingConsumer = getFFmpegConvertingConsumer(file)
 
     download.on('progress', (chunkLength, processed, total) => {
       progress = {chunkLength, processed, total}
@@ -63,11 +68,11 @@ async function downloadYoutubeVideoAsMp3(videoUrl, onProgress) {
       console.log("Finished.")
       resolve()
     })
-      
+
     ffmpegConvertingConsumer.stdio[3].on('data', chunk => {
-        if (!onProgressCaller) {
-            onProgressCaller = setInterval(() => {onProgress(progress); console.log(progress)}, 10)
-        }
+      if (!onProgressCaller) {
+        onProgressCaller = setInterval(() => {onProgress(progress); console.log(progress)}, 10)
+      }
     })
 
     download.pipe(ffmpegConvertingConsumer.stdio[4])
