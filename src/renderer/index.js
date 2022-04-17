@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     await window.youtube.downloadVideoAsMp3(videoUrl, (progress) => {
       const percent = ((progress.downloaded / progress.total) * 100).toFixed(2)
       downloadProgressbar.value = percent
-      downloadProgressDescribtion.innerText = `Progress: ${percent}`
+      downloadProgressDescribtion.innerText = `Progress: ${percent} % (${(progress.downloaded / 1024 / 1024).toFixed(2)} / ${(progress.total / 1024 / 1024).toFixed(2)} MB)`
 
       console.log(`${percent} % downloaded`)
     })
