@@ -4,7 +4,6 @@
 
 Minimalistic Mp3 downloader for YouTube videos, available for the windows platform. 
 <br>(Downloaded files are stored in the homedirectory under downloads)
-<br>[Download](https://github.com/janml/Yt2Mp3/releases)
 
 ![](https://raw.githubusercontent.com/janml/Yt2Mp3/main/screenshot.PNG)
 
