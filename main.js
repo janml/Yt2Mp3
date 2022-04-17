@@ -5,8 +5,8 @@ const { initIPC } = require("./src/worker/ipc")
 
 async function createWindow() {
   const win = new BrowserWindow({
-    width: 500,
-    height: 320,
+    width: 400,
+    height: 230,
     resizable: false,
     show: false,  // Hiding the window as long as the content is loading.
     autoHideMenuBar: true,
@@ -32,3 +32,14 @@ app.on("ready", async () => {
 app.on('window-all-closed', () => {
   app.quit()
 })
+
+
+if (!app.isPackaged) {
+  try {
+    require('electron-reloader')(module, {
+      watchRenderer: true,
+      debug: true,
+      ignore: ["dist"]
+    })
+  } catch (_) {}  
+}
