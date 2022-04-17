@@ -2,8 +2,9 @@
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/janml/Yt2Mp3/blob/main/LICENSE)
 
-Minimalistic Mp3 downloader for YouTube videos. 
-[Download here for Windows](https://github.com/janml/Yt2Mp3/releases)
+Minimalistic Mp3 downloader for YouTube videos, available for the windows platform. 
+(Files will be available in the homedirectory under downloads)
+[Download](https://github.com/janml/Yt2Mp3/releases)
 
 ![](https://raw.githubusercontent.com/janml/Yt2Mp3/main/screenshot.PNG)
 
