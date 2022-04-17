@@ -1,6 +1,7 @@
-const {ipcMain} = require("electron")
-const ytdl = require("ytdl-core")
 const fs = require('fs')
+const ytdl = require("ytdl-core")
+const {ipcMain} = require("electron")
+const {downloadYoutubeVideoAsMp3} = require("./tasks")
 
 
 const initIPC = () => {
@@ -9,18 +10,10 @@ const initIPC = () => {
   }),
 
   ipcMain.on("download-video-as-mp3", async (event, videoUrl) => {
-    const download = ytdl(videoUrl, {quality: "highestaudio"})
-    
-    download.on("progress", (chunkLength, downloaded, total) => {
-      console.log(`Downloading: ${videoUrl} (${downloaded}/${total}) ...`)
-      event.sender.send("download-progress", {chunkLength, downloaded, total})
+    await downloadYoutubeVideoAsMp3(videoUrl, (progress) => {
+      event.sender.send("download-progress", progress)
     })
-
-    download.on("end", () => {
-      event.reply("download-finished")
-    })
-
-    download.pipe(fs.createWriteStream("test.mp3"))
+    event.reply("download-finished")
   })
 }
 

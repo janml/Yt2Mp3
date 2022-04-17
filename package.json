@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "bulma": "^0.9.3",
+    "ffmpeg-static": "^5.0.0",
     "ytdl-core": "^4.11.0"
   },
-
   "build": {
     "appId": "com.yt2mp3",
     "productName": "Yt2Mp3",
@@ -29,12 +29,12 @@
       "icon": "src/resources/icon.ico"
     },
     "nsis": {
-        "installerIcon": "src/resources/icon.ico",
-        "uninstallerIcon": "src/resources/icon.ico",
-        "uninstallDisplayName": "Yt2Mp3",
-        "license": "LICENCE",
-        "oneClick": false,
-        "allowToChangeInstallationDirectory": true
+      "installerIcon": "src/resources/icon.ico",
+      "uninstallerIcon": "src/resources/icon.ico",
+      "uninstallDisplayName": "Yt2Mp3",
+      "license": "LICENCE",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     }
   }
 }
