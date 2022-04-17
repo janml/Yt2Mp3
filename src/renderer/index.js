@@ -15,9 +15,10 @@ window.addEventListener("DOMContentLoaded", async () => {
       const progressedMB = (progress.processed / 1024 / 1024).toFixed(2)
       
       downloadProgressbar.value = percent
-      downloadProgressDescribtion.innerText = `Progress: ${percent} % (${progressedMB} / ${totalMB} MB)`
+      downloadProgressDescribtion.innerText = `Progress: ${percent} % (${progressedMB} / ${totalMB} MB) 🚀`
     })
 
     downloadProgressbar.value = 0
+    downloadProgressDescribtion.innerText = "Download finished 😊"
   })
 })
