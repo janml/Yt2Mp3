@@ -1,11 +1,21 @@
 const ytdl = require("ytdl-core")
 const ffmpeg  = require("ffmpeg-static")
 const {spawn} = require('child_process');
+const path = require("path");
+const {app} = require('electron')
+
+
+function getFFmpegBinaryPath() {
+  if (app.isPackaged) {
+    return path.join(path.dirname(app.getPath("exe")), "resources", "ffmpeg.exe")
+  }
+  return ffmpeg
+}
 
 
 function getFFmpegConvertingConsumer(outputFile, outputFormat) {
   return spawn(
-      ffmpeg, 
+    getFFmpegBinaryPath(), 
       [
           // Remove ffmpeg's console spamming
           '-loglevel', '8', '-hide_banner',

@@ -23,6 +23,12 @@
     "appId": "com.yt2mp3",
     "productName": "Yt2Mp3",
     "win": {
+      "extraResources": [
+        {
+          "from": "node_modules/ffmpeg-static/ffmpeg.exe",
+          "to": "ffmpeg.exe"
+        }
+      ],
       "target": [
         "nsis"
       ],
@@ -32,7 +38,6 @@
       "installerIcon": "src/resources/icon.ico",
       "uninstallerIcon": "src/resources/icon.ico",
       "uninstallDisplayName": "Yt2Mp3",
-      "license": "LICENCE",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     }
