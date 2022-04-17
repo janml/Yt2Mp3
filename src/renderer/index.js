@@ -27,10 +27,16 @@ window.addEventListener("DOMContentLoaded", async () => {
     downloadProgressbar.classList.remove("is-invisible")
 
     await window.youtube.downloadVideoAsMp3(videoUrl, (progress) => {
-      console.log(progress)
+      const percent = ((progress.downloaded / progress.total) * 100).toFixed(2)
+      downloadProgressbar.value = percent
+      downloadProgressDescribtion.innerText = `Progress: ${percent}`
+
+      console.log(`${percent} % downloaded`)
     })
 
     downloadProgressbar.classList.add("is-invisible")
     downloadStartButton.classList.remove("is-invisible")
+    downloadProgressbar.value = 0
+    downloadProgressDescribtion.innerText = "Download finished."
   })
 })
