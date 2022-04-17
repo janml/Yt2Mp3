@@ -3,7 +3,7 @@
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/janml/Yt2Mp3/blob/main/LICENSE)
 
 Minimalistic Mp3 downloader for YouTube videos, available for the windows platform. 
-<br>(Files will be available in the homedirectory under downloads)
+<br>(Downloaded files are stored in the homedirectory under downloads)
 <br>[Download](https://github.com/janml/Yt2Mp3/releases)
 
 ![](https://raw.githubusercontent.com/janml/Yt2Mp3/main/screenshot.PNG)
