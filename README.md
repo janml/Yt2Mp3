@@ -1,4 +1,6 @@
 # Yt2Mp3:
+Minimalistic Mp3 downloader for youtube videos.
+
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
 ![](https://raw.githubusercontent.com/janml/Yt2Mp3/main/screenshot.PNG)
