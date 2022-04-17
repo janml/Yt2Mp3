@@ -22,12 +22,15 @@ window.addEventListener("DOMContentLoaded", async () => {
     videoMetaCard.classList.remove("is-invisible")
   })
 
-  downloadStartButton.addEventListener("click", () => {
+  downloadStartButton.addEventListener("click", async () => {
     downloadStartButton.classList.add("is-invisible")
     downloadProgressbar.classList.remove("is-invisible")
 
-    window.youtube.downloadVideoAsMp3(videoUrl, (progress) => {
+    await window.youtube.downloadVideoAsMp3(videoUrl, (progress) => {
       console.log(progress)
     })
+
+    downloadProgressbar.classList.add("is-invisible")
+    downloadStartButton.classList.remove("is-invisible")
   })
 })

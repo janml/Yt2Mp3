@@ -32,13 +32,3 @@ app.on("ready", async () => {
 app.on('window-all-closed', () => {
   app.quit()
 })
-
-
-// Hot-reloading in development
-try {
-  require('electron-reloader')(module, {
-    watchRenderer: true,
-    debug: true,
-    ignore: ["dist"]
-  })
-} catch (_) {}

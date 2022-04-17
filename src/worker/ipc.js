@@ -13,7 +13,11 @@ const initIPC = () => {
     
     download.on("progress", (chunkLength, downloaded, total) => {
       console.log(`Downloading: ${videoUrl} (${downloaded}/${total}) ...`)
-      event.sender.send("download-progress", downloaded)
+      event.sender.send("download-progress", {chunkLength, downloaded, total})
+    })
+
+    download.on("end", () => {
+      event.reply("download-finished")
     })
 
     download.pipe(fs.createWriteStream("test.mp3"))
