@@ -10,6 +10,7 @@ async function createWindow() {
     resizable: false,
     show: false,  // Hiding the window as long as the content is loading.
     autoHideMenuBar: true,
+    backgroundColor: "#ffffff",
     icon: path.join(__dirname, "src", "resources", "icon.ico"),
     webPreferences: {
       nodeIntegration: false,
