@@ -1,6 +1,6 @@
 {
   "name": "yt2mp3",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Downloads YouTube videos as Mp3",
   "author": "Jan-Michael Löhlein",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "bulma": "^0.9.3",
     "ffmpeg-static": "^5.0.0",
     "moment": "^2.29.2",
-    "ytdl-core": "^4.11.0"
+    "ytdl-core": "^4.11.2"
   },
   "build": {
     "appId": "com.yt2mp3",
