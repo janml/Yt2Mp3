@@ -2,5 +2,5 @@
 venv
 __pycache__
 exclude_from_version_control*
-*mp3*
-*webm*
+*.mp3
+*.webm
