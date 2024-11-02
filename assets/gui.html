@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yt2Mp3</title>
+    <link rel="stylesheet" href="bootstrap5.3.3.min.css">
+</head>
+<body>
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="video-url-field" placeholder="YouTube video">
+            </div>
+            <div class="col-auto">
+                <button id="download-start-button" class="btn btn-primary">Download</button>
+            </div>
+        </div>
+
+        <p id="status-label" class="mt-3 mx-1 h6"></p>
+    </div>
+
+    <script src="bootstrap5.3.3.min.js"></script>
+
+    <script>
+        function setStatusLabel(s) {
+            console.log(`Updating status label with: ${s}`)
+            document.getElementById('status-label').innerHTML = s
+        }
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById("download-start-button").addEventListener("click", (event) => {
+                const videoUrl = document.getElementById('video-url-field').value
+                pywebview.api.download_video_as_mp3(videoUrl)
+            })
+        })
+    </script>
+</body>
+</html>
