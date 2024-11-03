@@ -4,3 +4,6 @@ __pycache__
 exclude_from_version_control*
 *.mp3
 *.webm
+
+dist
+build
