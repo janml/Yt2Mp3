@@ -1,7 +1,5 @@
 import os
 import sys
-from pprint import pprint
-
 import webview
 import userpaths
 from typing import Callable
@@ -55,7 +53,6 @@ def download_youtube_video_as_mp3(video_url: str, on_progress: Callable):
 
 def on_download_progress(progress):
     if postprocessor := progress.get("postprocessor"):
-        pprint(progress["info_dict"])
         if postprocessor == "MoveFiles" and progress["status"] == "finished":  # This is the last step.
             progress_label = "Download finished 🤗"
         else:
