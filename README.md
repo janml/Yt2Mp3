@@ -3,6 +3,8 @@ Simple YouTube Mp3 downloader.
 
 (This is mostly a graphical wrapper around [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [ffmpeg](https://ffmpeg.org/))
 
+![Screenshot](https://github.com/janml/Yt2Mp3/blob/main/screenshot.png?raw=true "Screenshot")
+
 
 ## How to use
 You have two options to use this project.
