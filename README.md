@@ -8,7 +8,7 @@ Simple YouTube Mp3 downloader.
 
 ## How to use
 You have two options to use this project.
-1) You can download the pre-build binary from GitHub releases (please note that they are not signed).
+1) You can download the pre-build binary from GitHub releases (please note that binaries are unsigned).
 2) You can clone and build the project yourself (more information down below).
 
 
