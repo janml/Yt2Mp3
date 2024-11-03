@@ -1,13 +1,27 @@
 import os
+import sys
+from pprint import pprint
+
 import webview
+import userpaths
 from typing import Callable
 from threading import Thread
 from yt_dlp import YoutubeDL
+from yt_dlp.utils import DownloadError
 
 
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+if hasattr(sys, "frozen"):
+    BASE_DIR = sys._MEIPASS
+    DEBUG = False
+else:
+    BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+    DEBUG = True
+
 
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
+
+DOWNLOAD_DIR = os.path.join(userpaths.get_downloads(), "Yt2Mp3_Downloads")
+os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 
 webview_window: webview.Window
@@ -18,7 +32,7 @@ def update_status_label(s: str):
 
 
 def download_youtube_video_as_mp3(video_url: str, on_progress: Callable):
-    YoutubeDL({
+    downloader = YoutubeDL({
         "no_color": True,  # Remove ansi escape sequences from progress messages.
         "format": "bestaudio/best",
         "progress_hooks": [on_progress],
@@ -29,12 +43,19 @@ def download_youtube_video_as_mp3(video_url: str, on_progress: Callable):
             'preferredquality': '192',
         }],
         "postprocessor_hooks": [on_progress],
+        "outtmpl": os.path.join(DOWNLOAD_DIR, "%(title)s.%(ext)s"),
+        "windowsfilenames": True
 
-    }).download(url_list=[video_url])
+    })
+    try:
+        downloader.download(url_list=[video_url])
+    except DownloadError:
+        update_status_label("This video cannot be downloaded❗")
 
 
 def on_download_progress(progress):
     if postprocessor := progress.get("postprocessor"):
+        pprint(progress["info_dict"])
         if postprocessor == "MoveFiles" and progress["status"] == "finished":  # This is the last step.
             progress_label = "Download finished 🤗"
         else:
@@ -68,4 +89,4 @@ webview_window = webview.create_window(
     resizable=False,
 )
 
-webview.start(debug=True)
+webview.start(debug=DEBUG)
