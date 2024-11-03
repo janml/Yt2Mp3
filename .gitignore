@@ -1,4 +1,5 @@
 .idea
+.venv
 venv
 __pycache__
 exclude_from_version_control*
